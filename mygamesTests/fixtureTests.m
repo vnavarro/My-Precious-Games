@@ -10,6 +10,19 @@
 
 @implementation fixtureTests
 
+- (void)setUp
+{
+  [super setUp];
+  
+  // Set-up code here.
+}
+
+- (void)tearDown
+{
+  [Fixture truncateAll];
+  [super tearDown];
+}
+
 // All code under test must be linked into the Unit Test bundle
 - (void)testInsertGame
 {

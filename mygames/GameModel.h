@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Game.h"
 
-
-@interface Game (GameModel)
-
+@interface Game (Model)
++(NSArray *)findAllContainingText:(NSString *)value;
 @end

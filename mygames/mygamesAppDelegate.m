@@ -14,12 +14,20 @@
 @synthesize window=_window;
 
 @synthesize navigationController=_navigationController;
+@synthesize tabBarController=_tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  [ActiveRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"mygames.sqlite"];
+  
+  [Fixture truncateAll];
+  [Fixture setupCoreData];
+  
   // Override point for customization after application launch.
   // Add the navigation controller's view to the window and display.
-  self.window.rootViewController = self.navigationController;
+  //self.window.rootViewController = self.navigationController;
+  self.window.rootViewController = self.tabBarController;
   [self.window makeKeyAndVisible];
     return YES;
 }
@@ -65,6 +73,7 @@
 
 - (void)dealloc
 {
+  [_tabBarController release];
   [_window release];
   [_navigationController release];
     [super dealloc];

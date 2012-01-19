@@ -1,16 +1,18 @@
 //
-//  Fixure.h
-//  mygames
+//  Fixture.h
+//  bookgames
 //
 //  Created by Vitor Navarro on 11/20/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "Game.h"
+#import "MyGames.h"
 
-
-@interface Fixure : NSObject {
-    
-}
-
+@interface Fixture : NSObject
++(void)insertGames;
++(NSInteger)gamesCount;
++(void)setupCoreData;
++(void)truncateAll;
 @end
